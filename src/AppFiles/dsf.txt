@@ -1,0 +1,5 @@
+Cruise name: dsf
+People: 
+Name: dfs ,Age: 5 ,Pax: CHILD ,Ticket prize: 0
+
+Vehicles: 

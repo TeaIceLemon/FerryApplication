@@ -37,6 +37,7 @@ public class CruiseInfo {
         }
         return prize;
     }
+    @Override
     public String toString(){
         stringBuilder.append("Cruise name: " + getName() + "\n");
         stringBuilder.append("People: \n");
