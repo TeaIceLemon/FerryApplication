@@ -1,4 +1,4 @@
-package pl.exercise.ferry.vehicle;
+package pl.exercise.ferry.transport;
 
 public abstract class Vehicle {
   private final VehicleType vehicleType;
@@ -10,5 +10,9 @@ public abstract class Vehicle {
   }
   public int getPrize(){
     return 0;
+  }
+
+  public String toString(){
+    return "Vehicle: " + vehicleType + " ,Owner: " + owner + " ,Prize for transport: " + getPrize();
   }
 }

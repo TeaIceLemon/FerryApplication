@@ -7,6 +7,6 @@ public class FerryApp {
 
   public static void main(String[] args) {
     ScreenManager screenManager = new ScreenManager();
-    screenManager.manage();
+    screenManager.start();
   }
 }

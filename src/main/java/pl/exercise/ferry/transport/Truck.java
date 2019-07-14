@@ -1,4 +1,4 @@
-package pl.exercise.ferry.vehicle;
+package pl.exercise.ferry.transport;
 
 public class Truck extends Vehicle {
     private int weight;
@@ -6,7 +6,16 @@ public class Truck extends Vehicle {
         super(vehicleType, owner);
         this.weight = weight;
     }
+    public int getWeight() { return weight; }
+
     public int getPrize(){
-        return 10 *weight;
+        return 10 *getWeight();
+    }
+
+
+
+    @Override
+    public String toString() {
+        return super.toString() + " ,Weight: " + getWeight();
     }
 }

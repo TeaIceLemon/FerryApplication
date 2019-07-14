@@ -1,4 +1,4 @@
-package pl.exercise.ferry.person;
+package pl.exercise.ferry.transport;
 
 public enum PaxType {
   CHILD, YOUNG, ADULT, SENIOR

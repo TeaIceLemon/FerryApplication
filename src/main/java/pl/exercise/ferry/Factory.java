@@ -1,15 +1,12 @@
 package pl.exercise.ferry;
 
-import pl.exercise.ferry.person.PaxType;
-import pl.exercise.ferry.person.Person;
-import pl.exercise.ferry.vehicle.*;
+import pl.exercise.ferry.transport.PaxType;
+import pl.exercise.ferry.transport.Person;
+import pl.exercise.ferry.transport.*;
 
 public class Factory {
-    public static Person getPerson(int age) {
-        if (age <= 5) return new Person(PaxType.CHILD);
-        else if (age > 5 && age <= 18) return new Person(PaxType.YOUNG);
-        else if (age > 18 && age <= 70) return new Person(PaxType.ADULT);
-        else if (age > 70) return new Person(PaxType.SENIOR);
+    public static Person getPerson(int age, String name) {
+        if(age>0) return new Person(age, name);
         else return null;
     }
     public static Vehicle getCar(VehicleType type, String owner){

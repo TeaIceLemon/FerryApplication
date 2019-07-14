@@ -1,4 +1,4 @@
-package pl.exercise.ferry.vehicle;
+package pl.exercise.ferry.transport;
 
 public class Car extends Vehicle {
     public Car(VehicleType vehicleType, String owner) {
@@ -6,5 +6,10 @@ public class Car extends Vehicle {
     }
     public int getPrize(){
         return 20;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
