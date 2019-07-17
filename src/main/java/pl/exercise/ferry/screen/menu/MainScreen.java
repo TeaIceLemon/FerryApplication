@@ -24,7 +24,8 @@ public class MainScreen implements Screen {
             "1. Buy a ticket\n" +
             "2. Get current cruise prize\n" +
             "3. Show current information\n" +
-            "4. Write current information to file");
+            "4. Write current information to file\n" +
+            "5. Show previous cruise info");
 
     int i = in.nextInt();
     return i;

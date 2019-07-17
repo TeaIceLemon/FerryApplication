@@ -2,9 +2,7 @@ package pl.exercise.ferry.screen.menu;
 
 import pl.exercise.ferry.CruiseInfo;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileScreen {
@@ -14,6 +12,7 @@ public class FileScreen {
     public FileScreen(CruiseInfo cruiseInfo) {
         this.cruiseInfo = cruiseInfo;
     }
+
     public void fileWriter(String name, String content){
         isNameAlreadyUsed();
         String dir = "src/AppFiles/" + name + ".txt";
@@ -43,4 +42,41 @@ public class FileScreen {
         }
 
     }
+
+    public void readFile(){
+        String name = chooseFile();
+        try(FileReader reader = new FileReader(name);
+        BufferedReader br = new BufferedReader(reader)){
+            String line;
+        while((line = br.readLine()) !=null){
+            System.out.println(line);
+        }
+        }catch(FileNotFoundException e){
+
+        }catch (IOException a){}
+    }
+
+    private String chooseFile() {
+        String name ="";
+        String name2 = "";
+        File file = new File("src/AppFiles/");
+        File[] listOfFiles = file.listFiles();
+        for(int i =0; i<listOfFiles.length; i++){
+            if(listOfFiles[i].isFile()){
+                System.out.println("File: " + listOfFiles[i].getName());
+            }
+        }
+        outerloop:
+        while(true) {
+            System.out.println("Which file you want to read ?");
+            name = in.nextLine();
+            for (int i = 0; i < listOfFiles.length; i++) {
+                if(listOfFiles[i].getName().equals(name)) {
+                    break outerloop;
+                }
+            }
+        }
+        return name;
+    }
+
 }

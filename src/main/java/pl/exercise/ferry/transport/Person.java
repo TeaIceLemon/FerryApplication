@@ -4,9 +4,11 @@ public class Person {
     private PaxType paxType;
     private int age;
     private String name;
+
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
+
         if (age <= 5) this.paxType = PaxType.CHILD;
         else if (age > 5 && age <= 18) this.paxType = PaxType.YOUNG;
         else if (age > 18 && age <= 70) this.paxType = PaxType.ADULT;

@@ -40,6 +40,10 @@ public class ScreenManager {
             fileScreen.fileWriter(cruiseInfo.getName(),cruiseInfo.toString());
             return 0;
         }
+        else if(chosenScreen ==5){
+            fileScreen.readFile();
+            return 0;
+        }
         else return 0;
 
     }
