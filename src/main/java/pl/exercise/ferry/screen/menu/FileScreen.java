@@ -45,20 +45,24 @@ public class FileScreen {
 
     public void readFile(){
         String name = chooseFile();
-        try(FileReader reader = new FileReader(name);
+        String dir = "src/AppFiles/" + name;
+        try(FileReader reader = new FileReader(dir);
         BufferedReader br = new BufferedReader(reader)){
             String line;
         while((line = br.readLine()) !=null){
             System.out.println(line);
         }
         }catch(FileNotFoundException e){
-
-        }catch (IOException a){}
+            System.out.println(e.getMessage());
+        }catch (IOException a){
+            System.out.println(a.getMessage());
+        }
+        System.out.println();
+        pressAnyKeyToContinue();
     }
 
     private String chooseFile() {
         String name ="";
-        String name2 = "";
         File file = new File("src/AppFiles/");
         File[] listOfFiles = file.listFiles();
         for(int i =0; i<listOfFiles.length; i++){
@@ -78,5 +82,14 @@ public class FileScreen {
         }
         return name;
     }
-
+    private void pressAnyKeyToContinue()
+    {
+        System.out.println("Press Enter key to continue...");
+        try
+        {
+            System.in.read();
+        }
+        catch(Exception e)
+        {}
+    }
 }
