@@ -37,14 +37,23 @@ public class ScreenManager {
             return 0;
         }
         else if(chosenScreen ==4){
-            fileScreen.fileWriter(cruiseInfo.getName(),cruiseInfo.toString());
+            fileScreen.fileWriter();
             return 0;
         }
         else if(chosenScreen ==5){
             fileScreen.readFile();
             return 0;
         }
+        else if(chosenScreen ==6){
+            closingApp();
+            return 0;
+        }
         else return 0;
+    }
+
+    public void closingApp(){
+        fileScreen.exitWriter();
+        System.exit(0);
 
     }
 }

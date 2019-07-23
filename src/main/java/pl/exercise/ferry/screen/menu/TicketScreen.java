@@ -15,7 +15,8 @@ public class TicketScreen {
 
     Scanner in = new Scanner(System.in);
     public int interact(){
-        System.out.println("Do you want to buy ticket for a (1)person or (2)transport ?");
+        System.out.println("Do you want to buy ticket for a [1] person or [2] transport ?" +
+                "or ship a [3] merchandise?");
         while(true){
             int i = in.nextInt();
             if(i==1){
@@ -26,6 +27,11 @@ public class TicketScreen {
                  vehicleTicket();
                  break;
             }
+            else if(i==3){
+                merchandiseTicket();
+                break;
+            }
+            else System.out.println("Wrong input, try again");
 
         }
         System.out.println();
@@ -82,6 +88,19 @@ public class TicketScreen {
             if(i == 1) continue;
             else break;
         }
-
+    }
+    private void merchandiseTicket(){
+        System.out.println("Prize for shipping merchandise is 50zł for m^3");
+        while(true){
+            System.out.println("What do you want to transport?");
+            String merchandiseName = in.nextLine();
+            System.out.println("Whats the volume?");
+            int volume = in.nextInt();
+            cruise.addMerchendise(Factory.getMerchandise(merchandiseName, volume));
+            System.out.println("Do you want to add next merchandise? [0]No or [1]Yes");
+            int i = in.nextInt();
+            if(i == 1) continue;
+            else break;
+        }
     }
 }

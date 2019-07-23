@@ -8,6 +8,7 @@ public class Truck extends Vehicle {
     }
     public int getWeight() { return weight; }
 
+    @Override
     public int getPrize(){
         return 10 *getWeight();
     }

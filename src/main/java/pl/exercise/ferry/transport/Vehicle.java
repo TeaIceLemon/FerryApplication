@@ -8,6 +8,7 @@ public abstract class Vehicle {
     this.vehicleType = vehicleType;
     this.owner = owner;
   }
+
   public int getPrize(){
     return 0;
   }

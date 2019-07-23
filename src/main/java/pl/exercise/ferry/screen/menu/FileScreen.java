@@ -13,16 +13,21 @@ public class FileScreen {
         this.cruiseInfo = cruiseInfo;
     }
 
-    public void fileWriter(String name, String content){
-        isNameAlreadyUsed();
-        String dir = "src/AppFiles/" + name + ".txt";
+    public void exitWriter(){
+        String dir = "src/AppFiles/" + cruiseInfo.getName() + ".txt";
         try(FileWriter fileWriter = new FileWriter(dir)){
-            fileWriter.write(content);
+            fileWriter.write(cruiseInfo.toString());
             fileWriter.flush();
         } catch (IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+    }
+
+
+    public void fileWriter(){
+        isNameAlreadyUsed();
+        exitWriter();
     }
 
     private void isNameAlreadyUsed() {

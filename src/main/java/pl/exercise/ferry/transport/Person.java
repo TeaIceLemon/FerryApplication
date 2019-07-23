@@ -15,6 +15,7 @@ public class Person {
         else if (age > 70) this.paxType = PaxType.SENIOR;
 
     }
+
     public int getPrize(){
         if(paxType == PaxType.CHILD) return 0;
         else if (paxType == PaxType.YOUNG) return 5;
@@ -35,10 +36,11 @@ public class Person {
         return name;
     }
 
+    @Override
     public String toString(){
-        return "Name: " + getName() + " ,Age: " + getAge() + " ,Pax: " + getPaxType() +
+        return "Name: " + name + " , age: " + age + " , Pax: " + paxType +
                 " ,Ticket prize: " + getPrize();
-    }
+}
 
 
 }

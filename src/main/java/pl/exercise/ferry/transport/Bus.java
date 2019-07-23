@@ -9,6 +9,7 @@ public class Bus extends Vehicle {
 
     public int getLength() { return length; }
 
+    @Override
     public int getPrize(){ return 5*getLength(); }
 
     @Override

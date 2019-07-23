@@ -1,6 +1,5 @@
 package pl.exercise.ferry;
 
-import pl.exercise.ferry.transport.PaxType;
 import pl.exercise.ferry.transport.Person;
 import pl.exercise.ferry.transport.*;
 
@@ -15,14 +14,18 @@ public class Factory {
     }
     public static Vehicle getBike(VehicleType type, String owner) {
         if(type ==VehicleType.BIKE ) return new Bike(VehicleType.BIKE, owner);
-        return null;
+        else return null;
     }
     public static Vehicle getBus(VehicleType type, String owner,int length) {
         if(type ==VehicleType.BUS ) return new Bus(VehicleType.BUS, owner, length);
-        return null;
+        else return null;
     }
     public static Vehicle getTruck(VehicleType type, String owner , int weight) {
         if(type ==VehicleType.TRUCK ) return new Truck(VehicleType.TRUCK, owner,weight);
-        return null;
+        else return null;
+    }
+    public static Merchandise getMerchandise(String name, int volume){
+        if(!name.isEmpty() && volume>0) return new Merchandise(name , volume);
+        else return null;
     }
 }
