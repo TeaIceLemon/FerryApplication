@@ -4,9 +4,11 @@ public class Merchandise {
     private String name;
     private int volume;
 
+
     public Merchandise(String name, int volume) {
         this.name = name;
         this.volume = volume;
+
     }
 
 

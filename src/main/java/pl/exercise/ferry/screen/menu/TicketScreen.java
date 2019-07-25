@@ -8,6 +8,12 @@ import java.util.Scanner;
 
 public class TicketScreen {
     CruiseInfo cruise;
+    private final int personSpace = 5;
+    private final int bikeSpace = 10;
+    private final int carSpace = 15;
+    private final int busSpace = 20;
+    private final int truckSpace = 30;
+    private final int marchandiseSpace = 5;
 
     public TicketScreen(CruiseInfo cruise) {
         this.cruise = cruise;
@@ -50,17 +56,17 @@ public class TicketScreen {
             String name2 = in.nextLine();
             System.out.println("What transport type do you want to carry?  ");
             int n = in.nextInt();
-            if(n ==1 ) cruise.addVehicle(Factory.getCar(VehicleType.CAR, name2));
-            else if (n==2) cruise.addVehicle(Factory.getBike(VehicleType.BIKE,name2));
+            if(n ==1 ) cruise.addVehicle(Factory.getCar(VehicleType.CAR, name2,cruise.getCapacity(),carSpace));
+            else if (n==2) cruise.addVehicle(Factory.getBike(VehicleType.BIKE,name2,cruise.getCapacity(),bikeSpace));
             else if (n==3) {
                 System.out.println("whats weight of the truck ? ");
                 int weight = in.nextInt();
-                cruise.addVehicle(Factory.getTruck(VehicleType.TRUCK,name2,weight));
+                cruise.addVehicle(Factory.getTruck(VehicleType.TRUCK,name2,weight,cruise.getCapacity(),truckSpace));
             }
             else if(n==4) {
                 System.out.println("whats bus length ?");
                 int length = in.nextInt();
-                cruise.addVehicle(Factory.getBus(VehicleType.BUS,name,length));
+                cruise.addVehicle(Factory.getBus(VehicleType.BUS,name,length,cruise.getCapacity(),busSpace));
             }
             System.out.println("Do you want to add next transport? [0]No or [1]Yes");
             int i = in.nextInt();
@@ -82,7 +88,7 @@ public class TicketScreen {
             String name = in.nextLine();
             System.out.println("Whats person's age ?");
             int age = in.nextInt();
-            cruise.addPerson(Factory.getPerson(age, name));
+            cruise.addPerson(Factory.getPerson(age, name,cruise.getCapacity(),personSpace));
             System.out.println("Do you want to add next person? [0]No or [1]Yes");
             int i = in.nextInt();
             if(i == 1) continue;
@@ -93,10 +99,11 @@ public class TicketScreen {
         System.out.println("Prize for shipping merchandise is 50zł for m^3");
         while(true){
             System.out.println("What do you want to transport?");
+            String merchandiseName2 = in.nextLine();
             String merchandiseName = in.nextLine();
             System.out.println("Whats the volume?");
             int volume = in.nextInt();
-            cruise.addMerchendise(Factory.getMerchandise(merchandiseName, volume));
+            cruise.addMerchandise(Factory.getMerchandise(merchandiseName, volume,cruise.getCapacity(),marchandiseSpace));
             System.out.println("Do you want to add next merchandise? [0]No or [1]Yes");
             int i = in.nextInt();
             if(i == 1) continue;

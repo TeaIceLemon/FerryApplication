@@ -13,6 +13,7 @@ public class CruiseInfo {
     private List<Merchandise> merchandiseList = new ArrayList<>();
     private StringBuilder stringBuilder = new StringBuilder();
     private String name = "";
+    private int capacity = 1000;
 
     public void addPerson(Person person){
         personList.add(person);
@@ -20,7 +21,7 @@ public class CruiseInfo {
     public void addVehicle(Vehicle vehicle){
         vehicleList.add(vehicle);
     }
-    public void addMerchendise(Merchandise merchandise) {merchandiseList.add(merchandise);}
+    public void addMerchandise(Merchandise merchandise) {merchandiseList.add(merchandise);}
 
     public String getName() {
         return name;
@@ -28,6 +29,10 @@ public class CruiseInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
     public int getCruisePrize(){
@@ -49,18 +54,27 @@ public class CruiseInfo {
         stringBuilder.append("People: \n");
         if (personList.size()>0){
             for(Person person : personList){
+                if(person ==null){
+                    continue;
+                }
                 stringBuilder.append(person.toString() + "\n");
             }
         }
-        if(vehicleList.size()>1){
+        if(vehicleList.size()>0){
             stringBuilder.append("\nVehicles: \n");
             for(Vehicle vehicle : vehicleList){
+                if(vehicle==null) {
+                    continue;
+                }
                 stringBuilder.append(vehicle.toString()+ "\n");
             }
         }
         if(merchandiseList.size()>0){
             stringBuilder.append("\n Merchandise: \n");
             for(Merchandise merchandise : merchandiseList){
+                if(merchandise ==null){
+                    continue;
+                }
                 stringBuilder.append((merchandise.toString() + "\n"));
             }
         }

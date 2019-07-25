@@ -1,0 +1,10 @@
+Cruise name: 1
+People: 
+
+ Merchandise: 
+name: e, volume: 3, shipping prize: 150
+Cruise name: 1
+People: 
+
+ Merchandise: 
+name: e, volume: 3, shipping prize: 150

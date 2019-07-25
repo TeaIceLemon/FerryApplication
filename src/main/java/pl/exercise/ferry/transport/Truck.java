@@ -2,10 +2,13 @@ package pl.exercise.ferry.transport;
 
 public class Truck extends Vehicle {
     private int weight;
+
     public Truck(VehicleType vehicleType, String owner, int weight) {
         super(vehicleType, owner);
         this.weight = weight;
     }
+
+
     public int getWeight() { return weight; }
 
     @Override
