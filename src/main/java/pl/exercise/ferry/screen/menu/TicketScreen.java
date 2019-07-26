@@ -54,6 +54,10 @@ public class TicketScreen {
             System.out.println("Whats transport's owner name?");
             String name = in.nextLine();
             String name2 = in.nextLine();
+            if(!cruise.isPersonOnBoard(name2)){
+                System.out.println("You cant ship a vehicle without owner ");
+                continue;
+            }
             System.out.println("What transport type do you want to carry?  ");
             int n = in.nextInt();
             if(n ==1 ) cruise.addVehicle(Factory.getCar(VehicleType.CAR, name2,cruise.getCapacity(),carSpace));

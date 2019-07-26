@@ -27,6 +27,15 @@ public class CruiseInfo {
         return name;
     }
 
+    public boolean isPersonOnBoard(String name){
+        for(Person person : personList){
+            if(person.getName().toLowerCase().equals(name.toLowerCase())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
